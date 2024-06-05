@@ -69,7 +69,7 @@ export const authOptions: NextAuthOptions = {
       clientSecret: env.ATLASSIAN_CLIENT_SECRET,
       authorization: {
         params: {
-          scope: "write:jira-work read:jira-work read:jira-user offline_access read:me",
+          scope: "write:jira-work read:jira-work read:jira-user read:me",
         }
       }
     }),
