@@ -71,6 +71,7 @@ export const authOptions: NextAuthOptions = {
         params: {
           scope: "write:jira-work read:jira-work read:jira-user offline_access read:me",
         }
+      }
     }),
     /**
      * ...add more providers here.

@@ -25,7 +25,7 @@ export const env = createEnv({
     SLACK_CLIENT_ID: z.string(),
     SLACK_CLIENT_SECRET: z.string(),
     ATLASSIAN_CLIENT_ID: z.string(),
-    ATLASSIAN_CLIENT_SECRET: z.string(),
+    ATLASSIAN_CLIENT_SECRET: z.string()
   },
 
   /**
