@@ -6,6 +6,7 @@ import {
 } from "next-auth";
 import { type Adapter } from "next-auth/adapters";
 import SlackProvider from "next-auth/providers/slack";
+import AtlassianProvider from "next-auth/providers/atlassian";
 
 import { env } from "~/env";
 import { db } from "~/server/db";
@@ -59,9 +60,17 @@ export const authOptions: NextAuthOptions = {
     verificationTokensTable: verificationTokens,
   }) as Adapter,
   providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
+    SlackProvider({
+      clientId: env.SLACK_CLIENT_ID,
+      clientSecret: env.SLACK_CLIENT_SECRET,
+    }),
+    AtlassianProvider({
+      clientId: env.ATLASSIAN_CLIENT_ID,
+      clientSecret: env.ATLASSIAN_CLIENT_SECRET,
+      authorization: {
+        params: {
+          scope: "write:jira-work read:jira-work read:jira-user offline_access read:me",
+        }
     }),
     /**
      * ...add more providers here.
