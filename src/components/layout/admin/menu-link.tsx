@@ -25,14 +25,3 @@ export const MenuLink: React.FC<MenuProps & { className?: string }> = ({
     {children}
   </Link>
 );
-
-export const TopMenu: React.FC<MenuProps> = ({ href, children }) => (
-  <MenuLink
-    href={href}
-    className="transition-colors hover:text-foreground"
-    activeClassName="text-primary"
-    inactiveClassName="text-muted-foreground"
-  >
-    {children}
-  </MenuLink>
-);

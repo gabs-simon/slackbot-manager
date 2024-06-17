@@ -1,8 +1,7 @@
 import { Button } from "~/components/ui/button";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
-
-import { TopMenu as MenuItem, type MenuLink } from "../menu-link";
+import { MenuLink, type MenuProps } from "../menu-link";
 
 import AppIcon from "./app-icon";
 
@@ -28,6 +27,17 @@ const linkArray: MenuLink[] = [
     content: "Settings",
   },
 ];
+
+const MenuItem: React.FC<MenuProps> = ({ href, children }) => (
+  <MenuLink
+    href={href}
+    className="transition-colors hover:text-foreground"
+    activeClassName="text-primary"
+    inactiveClassName="text-muted-foreground"
+  >
+    {children}
+  </MenuLink>
+);
 
 const MenuLinks: React.FC<{ links: MenuLink[] }> = ({ links }) => {
   return (

@@ -9,17 +9,17 @@ import {
 } from "~/components/ui/card";
 import { Checkbox } from "~/components/ui/checkbox";
 import { Input } from "~/components/ui/input";
-import SlackIntegration from "./slack";
 
-const GeneralPage: React.FC = () => {
+import { getServerAuthSession } from "~/server/auth";
+
+const SlackIntegration: React.FC = () => {
   return (
     <>
-      <SlackIntegration />
       <Card x-chunk="dashboard-04-chunk-1">
         <CardHeader>
-          <CardTitle>Store Name</CardTitle>
+          <CardTitle>Slack Integration</CardTitle>
           <CardDescription>
-            Used to identify your store in the marketplace.
+            Check your Slack integration settings.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -61,4 +61,4 @@ const GeneralPage: React.FC = () => {
   );
 };
 
-export default GeneralPage;
+export default SlackIntegration;
